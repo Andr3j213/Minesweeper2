@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Minesweeper</title>
+  <style>
+    /* Setzt Grundstil für gesamte Seite und das HTML-Element */
+    body, html {
+      margin: 0; /* Entfernt Außenabstand des Browsers */
+      padding: 0; /* Entfernt Innenabstand */
+      height: 100%; /* Macht Body & HTML so hoch wie das Browserfenster */
+      font-family: 'Courier New', monospace; /* Retro-Schriftart im Terminalstil */
+    }
+
+    /* Container hält alle sichtbaren Elemente */
+    .container {
+      position: relative; /* Erlaubt, dass Kind-Elemente absolut darin positioniert werden */
+      width: 100%; /* Breite = gesamte Fensterbreite */
+      height: 100%; /* Höhe = gesamte Fensterhöhe */
+      overflow: hidden; /* Alles, was übersteht, wird abgeschnitten */
+    }
+
+    /* Das Hintergrundbild, das den ganzen Bildschirm ausfüllt */
+    .background-img {
+      position: absolute; /* Positioniert das Bild relativ zum .container */
+      width: 100%; /* Breite = ganze Breite des Containers */
+      height: 100%; /* Höhe = ganze Höhe des Containers */
+      object-fit: cover; /* Skaliert Bild so, dass es den Container abdeckt */
+      z-index: 0; /* Legt es hinter andere Elemente */
+    }
+
+    /* Der große Play-Button in der Mitte */
+    .play-button {
+      position: absolute; /* Absolut innerhalb des .container positioniert */
+      top: 85%; /* Positioniert den Button vertikal bei 85% der Containerhöhe */
+      left: 50%; /* Horizontal zentriert bei 50% */
+      transform: translate(-50%, -50%); /* Exakte Zentrierung des Buttons */
+      padding: 40px 70px; /* Abstand innen: oben/unten 40px, rechts/links 70px */
+      font-size: 40px; /* Große Schrift für gute Sichtbarkeit */
+      background-color: #34F12B; /* Leuchtend grüner Hintergrund */
+      color: white; /* Weiße Schriftfarbe */
+      border: 4px solid black; /* Achtung: nicht ganz korrekt, sollte border: 2px solid black; sein */
+      border-radius: 10px; /* Abgerundete Ecken */
+      cursor: pointer; /* Mauszeiger wird zur Hand beim Überfahren */
+      z-index: 1; /* Legt den Button über das Bild */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Weicher Schatten für 3D-Effekt */
+    }
+
+    /* Hover-Effekt für den Button */
+    .play-button:hover {
+      background-color: #45a049; /* Ändert Farbe zu dunklerem Grün bei Mouseover */
+    }
+  </style>
+</head>
+
+<body>
+<!-- Hauptcontainer für Inhalt -->
+<div class="container">
+  <!-- Hintergrundbild -->
+  <img src="Pictures/Homescreen.png" alt="Minesweeper Background" class="background-img">
+
+  <!-- Play-Button, der bei Klick zur Seite "minesweeper.html" führt -->
+  <button class="play-button" onclick="location.href='minesweeper.html'">
+    <b>Play ▷</b> <!-- Fetter Buttontext mit Pfeil -->
+  </button>
+</div>
+</body>
+</html>
